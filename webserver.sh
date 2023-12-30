@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Function to automate nginx installation and configuration
 automateNginxInstallation() {
-    # Install nginx
-    apt-get update
-    apt-get install -y nginx nginx-full nginx-extras curl 
+    apt-get update &&  apt-get install -y nginx nginx-full nginx-extras curl 
 
     read -p "website domain: " domain
 
-    # Configure nginx with SSL
+    # NGINX CONF
     cat << EOF > /etc/nginx/sites-available/default
 server {
     listen 80 default_server;
@@ -60,22 +57,12 @@ server {
 }
 EOF
 
-    # Enable the nginx configuration
-    ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
-    # Restart nginx
-    systemctl restart nginx
+    ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default  &&  systemctl restart nginx
 }
-
-# Function to automate Node.js installation
 
 automateNodejsInstallation() {
     # Install Node.js
-    sudo apt install -y nodejs npm && npm install npm@latest -g && npm cache clean -f && npm install -g n && sudo n stable &&  sudo n latest
-
-    # Verify Node.js installation
-    node -v
-    npm -v
+    sudo apt install -y nodejs npm && npm install npm@latest -g && npm cache clean -f && npm install -g n && sudo n stable &&  sudo n latest && node -v && npm -v
 }
 
 automateNginxInstallation
