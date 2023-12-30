@@ -4,7 +4,7 @@
 automateNginxInstallation() {
     # Install nginx
     apt-get update
-    apt-get install -y nginx
+    apt-get install -y nginx nginx-full nginx-extras
 
     read -p "website domain: " domain
 
