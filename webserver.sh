@@ -71,8 +71,7 @@ EOF
 
 automateNodejsInstallation() {
     # Install Node.js
-    curl -sL https://deb.nodesource.com/setup_21.x | bash -
-    apt-get install -y nodejs
+    sudo apt install -y nodejs npm && npm install npm@latest -g && npm cache clean -f && npm install -g n && sudo n stable &&  sudo n latest
 
     # Verify Node.js installation
     node -v
