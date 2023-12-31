@@ -14,4 +14,4 @@ cd /etc/nginx/sites-enabled/
 
 curl -o /etc/nginx/sites-enabled/example.com.conf https://raw.githubusercontent.com/tomasruizserrano/Bash-Scripts/main/NGINX.CONF.PRESET/sites-enabled/example.com.conf
 
-sudo ln -s /etc/nginx/sites-enabled/example.com.conf /etc/nginx/sites-avaiable/example.com.conf
+sudo ln -s /etc/nginx/sites-avaiable/example.com.conf /etc/nginx/sites-enabled/example.com.conf 
