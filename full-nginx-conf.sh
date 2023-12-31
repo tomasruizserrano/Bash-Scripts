@@ -1,10 +1,10 @@
 #!/bin/bash
 
-apt install nginx nginx-full nginx-extras curl
+apt install nginx nginx-full nginx-extras curl && mkdir /etc/nginx/config
+
 
 curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/tomasruizserrano/Bash-Scripts/main/NGINX.CONF.PRESET/nginx.conf
 
-mkdir /etc/nginx/config
 
 curl -o /etc/nginx/config/general.conf https://raw.githubusercontent.com/tomasruizserrano/Bash-Scripts/main/NGINX.CONF.PRESET/config/general.conf
 curl -o /etc/nginx/config/proxy.conf https://raw.githubusercontent.com/tomasruizserrano/Bash-Scripts/main/NGINX.CONF.PRESET/config/proxy.conf
