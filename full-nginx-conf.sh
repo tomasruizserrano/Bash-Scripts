@@ -1,6 +1,6 @@
 #!/bin/bash
-
-apt install nginx nginx-full nginx-extras curl && mkdir /etc/nginx/config
+mkdir /etc/nginx/config
+apt install nginx nginx-full nginx-extras curl
 
 openssl dhparam -out /etc/nginx/dhparam.pem 2048
 
